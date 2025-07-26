@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Quest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Study Quest</h1>
+        
+        <!-- Player Stats -->
+        <div class="stats">
+            <p>👤 <span id="player-name">Player</span></p>
+            <p>⭐ Level: <span id="level">1</span></p>
+            <p>⚡ XP: <span id="xp">0</span>/<span id="next-level">200</span></p>
+            <p>🔥 Streak: <span id="streak">0</span> days</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button id="study-btn">📚 Study (50 XP)</button>
+            <button id="boss-btn">⚔️ Boss Battle (100 XP)</button>
+            <button id="shop-btn">🛍️ Shop</button>
+        </div>
+
+        <!-- Shop (Hidden by Default) -->
+        <div id="shop" class="hidden">
+            <h3>🛍️ Rewards Shop</h3>
+            <ul id="rewards-list"></ul>
+            <button id="close-shop">Close</button>
+        </div>
+
+        <!-- Log -->
+        <div id="log"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
