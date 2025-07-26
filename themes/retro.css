@@ -1,0 +1,24 @@
+:root {
+    --bg-color: #1a1a1a;
+    --panel-color: rgba(40, 40, 40, 0.9);
+    --text-color: #e0e0e0;
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --accent: #ffe66d;
+    --shadow: 0 8px 32px rgba(255, 107, 107, 0.2);
+}
+
+.progress-ring__fill {
+    stroke: var(--accent);
+    filter: drop-shadow(0 0 8px var(--accent));
+}
+
+.action-button {
+    background: linear-gradient(135deg, var(--primary), #ff8e8e);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+}

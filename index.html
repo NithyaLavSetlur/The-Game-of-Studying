@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6c5ce7">
     <title>Study Quest</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link id="theme-style" rel="stylesheet" href="themes/default.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="particle-container" id="particles"></div>
+    
     <div class="game-container">
         <!-- Header -->
         <header>
             <h1>STUDY QUEST</h1>
             <nav>
                 <a href="shop.html" class="nav-button">🛍️ Shop</a>
+                <div class="theme-switcher">
+                    <button data-theme="default">🌞</button>
+                    <button data-theme="cyberpunk">🌃</button>
+                    <button data-theme="fantasy">🏰</button>
+                    <button data-theme="retro">👾</button>
+                </div>
             </nav>
         </header>
 
-        <!-- Player Stats -->
-        <div class="stats-panel">
+        <!-- Animated Character -->
+        <div class="character-container">
+            <img id="character" src="assets/sprites/character-idle.gif" alt="Character">
+            <div class="speech-bubble" id="character-speech">Ready to study!</div>
+            <div class="level-badge">Lv.<span id="character-level">1</span></div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="glass-panel stats-panel">
             <div class="stat">
                 <span class="stat-label">LEVEL</span>
                 <span id="level" class="stat-value">1</span>
@@ -34,13 +51,22 @@
         </div>
 
         <!-- XP Progress Bar -->
-        <div class="progress-bar">
-            <div id="xp-bar" class="progress-fill"></div>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div id="xp-bar" class="progress-fill"></div>
+            </div>
+            <div class="xp-text">XP Progress</div>
         </div>
 
-        <!-- Timer -->
-        <div class="timer-panel">
-            <div id="timer-display">00:00:00</div>
+        <!-- Timer Panel -->
+        <div class="glass-panel timer-panel">
+            <div class="timer-container">
+                <svg class="progress-ring" width="200" height="200">
+                    <circle class="progress-ring__bg" stroke-width="10" fill="transparent" r="80" cx="100" cy="100"/>
+                    <circle class="progress-ring__fill" stroke-width="10" fill="transparent" r="80" cx="100" cy="100" stroke-dasharray="502" stroke-dashoffset="502"/>
+                </svg>
+                <div id="timer-display">00:00:00</div>
+            </div>
             <div class="timer-controls">
                 <button id="start-timer" class="timer-button">▶️ Start</button>
                 <button id="stop-timer" class="timer-button">⏹️ Stop</button>
@@ -49,16 +75,22 @@
         </div>
 
         <!-- Actions -->
-        <div class="action-buttons">
+        <div class="glass-panel action-buttons">
             <button id="boss-battle" class="action-button">⚔️ Boss Battle</button>
         </div>
 
         <!-- Activity Log -->
-        <div class="log-panel">
+        <div class="glass-panel log-panel">
             <h3>📜 ACTIVITY LOG</h3>
             <div id="log"></div>
         </div>
     </div>
+
+    <!-- Audio Elements -->
+    <audio id="sound-levelup" src="assets/sounds/level-up.mp3" preload="auto"></audio>
+    <audio id="sound-xpgain" src="assets/sounds/xp-gain.mp3" preload="auto"></audio>
+    <audio id="sound-click" src="assets/sounds/button-click.mp3" preload="auto"></audio>
+    <audio id="sound-boss" src="assets/sounds/boss-defeat.mp3" preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>

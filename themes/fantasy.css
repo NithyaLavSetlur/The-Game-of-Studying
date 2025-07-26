@@ -1,0 +1,22 @@
+:root {
+    --bg-color: #1e1a1d;
+    --panel-color: rgba(46, 41, 44, 0.9);
+    --text-color: #f8f4e3;
+    --primary: #7a9b76;
+    --secondary: #c5d1eb;
+    --accent: #ff8966;
+    --shadow: 0 8px 32px rgba(122, 155, 118, 0.2);
+}
+
+.progress-ring__fill {
+    stroke: var(--primary);
+    filter: drop-shadow(0 0 5px var(--primary));
+}
+
+.action-button {
+    background: linear-gradient(135deg, var(--primary), #5a7c55);
+}
+
+body {
+    background: linear-gradient(135deg, #1e1a1d 0%, #2d2a32 50%, #1e1a1d 100%);
+}
