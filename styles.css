@@ -1,68 +1,209 @@
+/* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background: #f0f8ff;
+    font-family: 'Roboto', sans-serif;
+    background: #1a1a2e;
+    color: #e6e6e6;
     margin: 0;
-    padding: 20px;
-    color: #333;
+    padding: 0;
 }
 
-.container {
-    max-width: 600px;
+.game-container {
+    max-width: 800px;
     margin: 0 auto;
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #4cc9f0;
+    padding-bottom: 10px;
 }
 
 h1 {
-    text-align: center;
-    color: #4b6cb7;
+    font-family: 'Press Start 2P', cursive;
+    color: #4cc9f0;
+    font-size: 24px;
+    margin: 0;
 }
 
-.stats {
-    background: #e6f7ff;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.actions {
+/* Stats Panel */
+.stats-panel {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #4b6cb7;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background: #3a56a0;
-}
-
-#shop {
-    margin-top: 20px;
+    justify-content: space-around;
+    background: #16213e;
     padding: 15px;
-    background: #fffae6;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.hidden {
-    display: none;
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: #a8dadc;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f72585;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 20px;
+    background: #16213e;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f72585, #b5179e);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Timer */
+.timer-panel {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#timer-display {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 36px;
+    margin: 10px 0;
+    color: #4cc9f0;
+}
+
+.timer-button {
+    background: #4361ee;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.timer-button:hover {
+    background: #3a0ca3;
+    transform: translateY(-2px);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    background: #f72585;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-button:hover {
+    background: #b5179e;
+    transform: scale(1.05);
+}
+
+/* Log Panel */
+.log-panel {
+    background: #16213e;
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.log-panel h3 {
+    margin-top: 0;
+    color: #a8dadc;
+    border-bottom: 1px solid #4cc9f0;
+    padding-bottom: 5px;
 }
 
 #log {
+    font-family: 'Courier New', monospace;
+}
+
+#log p {
+    margin: 5px 0;
+    padding: 3px 0;
+    border-bottom: 1px dotted #4cc9f0;
+}
+
+/* Shop Page Styles */
+.shop-panel {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
     margin-top: 20px;
-    padding: 10px;
-    background: #f9f9f9;
+}
+
+.reward-item {
+    background: #1a1a2e;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #4cc9f0;
+    text-align: center;
+}
+
+.reward-item button {
+    background: #4361ee;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.reward-item button:hover {
+    background: #3a0ca3;
+}
+
+/* Navigation Button */
+.nav-button {
+    background: #4cc9f0;
+    color: #1a1a2e;
+    padding: 8px 15px;
     border-radius: 5px;
-    max-height: 150px;
-    overflow-y: auto;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.nav-button:hover {
+    background: #4895ef;
+    transform: translateY(-2px);
 }
